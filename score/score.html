@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>score</title>
+    <link rel="stylesheet" href="scoren.css"></linkrel>
+    <script>
+      function  myfunc(){
+        var x = document.forms["form"]["fname"].value;
+         var res=x.split(",");
+         var sum = 0;
+         count=1;
+for (var i = 0; i < res.length; i++) {
+  sum += parseInt(res[i])*count;
+  if(count==4){
+    count=count+2;
+  }
+  else{
+  count++;
+  }
+}
+document.getElementById("demo").innerHTML=sum;
+
+      }
+    </script>
+</head>
+<body>
+    <form  style="text-align: center;" name="form" onsubmit="  myfunc(); return false;"  >
+    <h1 > Score Meter</h1>
+    <h4 > (Enter the number of singles, double, triples, fours and sixes) </h4>
+    <h2 >Enter the score details: <input type="text" placeholder="enter here" name="fname"  ></h2>
+    <input  type="submit" value="Get Score" >
+</form>
+    <h2 style="text-align: center;">Total score</h2> 
+    <h3 style="text-align: center;" id="demo"></h3>
+</body>
+</html>
