@@ -1,0 +1,30 @@
+.team
+{
+    
+    border-collapse: collapse;
+    text-align: center;
+    background-color: azure;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid black;
+}
+table
+{
+  
+    border-collapse: collapse;
+    text-align: center;
+    background-color: azure;
+    margin: 1rem;
+    padding: 1rem;
+    width: 97.2%;
+    border: 1px solid black;
+}
+th, td {
+    
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+
