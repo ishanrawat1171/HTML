@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          
+   
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="wincal.css">
+   <script>
+     
+        function myfunc(){
+            var teamn1 = document.forms["form"]["teamA"].value;
+            var teamn2=document.forms["form"]["teamB"].value;
+            var team1 = document.forms["form"]["scoreA"].value;
+            var team2=document.forms["form"]["scoreB"].value;
+            var a=team1.split("/");
+            var b=team2.split("/");
+            console.log(a);
+            var score1=parseInt(a[0]);
+            var score2=parseInt(b[0]);
+            if(score1>score2){
+                document.getElementsByTagName("p")[0].innerHTML=teamn1;
+            }
+            else{
+                document.getElementsByTagName("p")[0].innerHTML=teamn2;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Match summary</h1>
+   
+    <form name="form" onsubmit="myfunc(); return false;">
+    <h3>Team A <span class ="required">*</span> <input type="text" name="teamA" placeholder="Team A" required style="margin-left: 5%;" pattern="[A-Za-z]+"></h3>
+    
+    <h3>Team B <span class ="required">*</span> <input type="text" name="teamB" placeholder="TeamB" required required style="margin-left: 5%;" pattern="[A-Za-z]+"></h3>
+    <h3>Date:  <span class ="required">*</span> <input type="date" name="date" required style="margin-left: 6.3%;"> </h3>
+    <h3>Time:  <span class ="required">*</span> <input type="time" name="time" required style="margin-left: 6%;"> </h3>
+    <h3>Team A score <span class ="required">*</span> <input type="scoreA" name="scoreA" placeholder="runs/wicket" required style="margin-left: 1.5%;" pattern="([0-9]{1,3}[/][0-9])"></h3>
+     <h3>Team B score <span class ="required">*</span> <input type="scoreB" name="scoreB" placeholder="runs/wicket" required style="margin-left: 1.5%;" pattern="([0-9]{1,3}[/][0-9])"></h3>
+    <input type="submit" value="submit">
+    </body>
+
+</form>
+<h3>Winning team:<p></p></h3>
+</html>
